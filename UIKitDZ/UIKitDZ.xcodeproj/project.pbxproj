@@ -13,6 +13,8 @@
 		65025CA028DBAF6F000B352C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65025C9E28DBAF6F000B352C /* Main.storyboard */; };
 		65025CA228DBAF71000B352C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65025CA128DBAF71000B352C /* Assets.xcassets */; };
 		65025CA528DBAF71000B352C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65025CA328DBAF71000B352C /* LaunchScreen.storyboard */; };
+		6536FDE228DF8FB400563811 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536FDE128DF8FB400563811 /* Alert.swift */; };
+		6536FDE428DF9C7D00563811 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536FDE328DF9C7D00563811 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		65025CA128DBAF71000B352C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65025CA428DBAF71000B352C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65025CA628DBAF71000B352C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6536FDE128DF8FB400563811 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		6536FDE328DF9C7D00563811 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,41 @@
 		65025C9728DBAF6F000B352C /* UIKitDZ */ = {
 			isa = PBXGroup;
 			children = (
+				6536FDE028DF8F5400563811 /* Model */,
+				6536FDDF28DF8F4B00563811 /* View */,
+				6536FDDE28DF8F4300563811 /* Controller */,
 				65025C9828DBAF6F000B352C /* AppDelegate.swift */,
 				65025C9A28DBAF6F000B352C /* SceneDelegate.swift */,
-				65025C9C28DBAF6F000B352C /* ViewController.swift */,
 				65025C9E28DBAF6F000B352C /* Main.storyboard */,
 				65025CA128DBAF71000B352C /* Assets.xcassets */,
 				65025CA328DBAF71000B352C /* LaunchScreen.storyboard */,
 				65025CA628DBAF71000B352C /* Info.plist */,
 			);
 			path = UIKitDZ;
+			sourceTree = "<group>";
+		};
+		6536FDDE28DF8F4300563811 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				65025C9C28DBAF6F000B352C /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6536FDDF28DF8F4B00563811 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6536FDE328DF9C7D00563811 /* View.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6536FDE028DF8F5400563811 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6536FDE128DF8FB400563811 /* Alert.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +107,7 @@
 				65025C9128DBAF6F000B352C /* Sources */,
 				65025C9228DBAF6F000B352C /* Frameworks */,
 				65025C9328DBAF6F000B352C /* Resources */,
+				6536FDE528DF9F8900563811 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -133,6 +164,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6536FDE528DF9F8900563811 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		65025C9128DBAF6F000B352C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,6 +192,8 @@
 			files = (
 				65025C9D28DBAF6F000B352C /* ViewController.swift in Sources */,
 				65025C9928DBAF6F000B352C /* AppDelegate.swift in Sources */,
+				6536FDE428DF9C7D00563811 /* View.swift in Sources */,
+				6536FDE228DF8FB400563811 /* Alert.swift in Sources */,
 				65025C9B28DBAF6F000B352C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
