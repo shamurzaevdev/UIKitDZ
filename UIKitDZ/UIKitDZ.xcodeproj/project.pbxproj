@@ -13,6 +13,9 @@
 		65025CA028DBAF6F000B352C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65025C9E28DBAF6F000B352C /* Main.storyboard */; };
 		65025CA228DBAF71000B352C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65025CA128DBAF71000B352C /* Assets.xcassets */; };
 		65025CA528DBAF71000B352C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65025CA328DBAF71000B352C /* LaunchScreen.storyboard */; };
+		6536FDE828E0922A00563811 /* CafeMarioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536FDE728E0922A00563811 /* CafeMarioVC.swift */; };
+		6536FDEA28E0990F00563811 /* CheckVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536FDE928E0990F00563811 /* CheckVC.swift */; };
+		6536FDEC28E0B07F00563811 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536FDEB28E0B07F00563811 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		65025CA128DBAF71000B352C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65025CA428DBAF71000B352C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65025CA628DBAF71000B352C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6536FDE728E0922A00563811 /* CafeMarioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeMarioVC.swift; sourceTree = "<group>"; };
+		6536FDE928E0990F00563811 /* CheckVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckVC.swift; sourceTree = "<group>"; };
+		6536FDEB28E0B07F00563811 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +65,13 @@
 				65025C9828DBAF6F000B352C /* AppDelegate.swift */,
 				65025C9A28DBAF6F000B352C /* SceneDelegate.swift */,
 				65025C9C28DBAF6F000B352C /* ViewController.swift */,
+				6536FDE728E0922A00563811 /* CafeMarioVC.swift */,
+				6536FDE928E0990F00563811 /* CheckVC.swift */,
 				65025C9E28DBAF6F000B352C /* Main.storyboard */,
 				65025CA128DBAF71000B352C /* Assets.xcassets */,
 				65025CA328DBAF71000B352C /* LaunchScreen.storyboard */,
 				65025CA628DBAF71000B352C /* Info.plist */,
+				6536FDEB28E0B07F00563811 /* Data.swift */,
 			);
 			path = UIKitDZ;
 			sourceTree = "<group>";
@@ -160,9 +169,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6536FDE828E0922A00563811 /* CafeMarioVC.swift in Sources */,
+				6536FDEC28E0B07F00563811 /* Data.swift in Sources */,
 				65025C9D28DBAF6F000B352C /* ViewController.swift in Sources */,
 				65025C9928DBAF6F000B352C /* AppDelegate.swift in Sources */,
 				65025C9B28DBAF6F000B352C /* SceneDelegate.swift in Sources */,
+				6536FDEA28E0990F00563811 /* CheckVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

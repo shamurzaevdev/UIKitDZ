@@ -8,8 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var emailInfo: UITextField!
+    @IBOutlet weak var passwordInfo: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    }
+    @IBAction func logIn(_ sender: Any) {
     }
 }
