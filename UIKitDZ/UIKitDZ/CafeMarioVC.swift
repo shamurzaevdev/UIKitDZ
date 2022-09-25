@@ -20,6 +20,7 @@ class CafeMarioVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+
     @IBAction func showFio(_ sender: UITextField) {
         data.fio?.append(sender.text ?? "")
         print(data.fio)
