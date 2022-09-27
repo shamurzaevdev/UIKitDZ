@@ -10,24 +10,34 @@ import AVFoundation
 
 class ViewMishari: UIViewController {
 
-    @IBOutlet weak var mediaSlider: UISlider!
-
-    var song = Song(name: "", artist: "", albumImage: "", song: "")
-        var player = AVAudioPlayer()
-        var button = UIButton()
-        var timer: Timer?
+    var player: AVAudioPlayer?
+    
+    @IBOutlet weak var playButton: UIButton!
 
     override func viewDidLoad() {
             super.viewDidLoad()
     }
-    @IBAction func playOrPause(_ sender: UIButton) {
-        if player.isPlaying {
-                        sender.setBackgroundImage(UIImage(systemName: "play.fill"), for: .normal)
-                        player.pause()
-                    } else {
-                        sender.setBackgroundImage(UIImage(systemName: "pause.fill"), for: .normal)
-                        player.play()
-                    }
-                    self.view.layoutIfNeeded()
+
+    @IBAction func didTapButton() {
+            if let player = player, player.isPlaying {
+                player.pause()
+            } else {
+                let urlString = Bundle.main.path(forResource: "Fatihah", ofType: "mp3")
+            do {
+                try AVAudioSession.sharedInstance().setMode(.default)
+                try AVAudioSession.sharedInstance().setActive(true,     options: .notifyOthersOnDeactivation)
+                guard let urlString = urlString else {
+                    return
+                }
+                player = try AVAudioPlayer(contentsOf:              URL(fileURLWithPath: urlString))
+                guard let player = player else {
+                    return
+                }
+                player.play()
+            }
+            catch {
+                print("something went wrong")
+            }
+        }
     }
 }

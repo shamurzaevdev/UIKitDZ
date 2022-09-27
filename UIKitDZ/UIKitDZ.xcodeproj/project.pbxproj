@@ -16,6 +16,8 @@
 		6536FE2128E17AE000563811 /* ViewMishari.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536FE2028E17AE000563811 /* ViewMishari.swift */; };
 		6536FE2328E17AF300563811 /* ViewSeferagic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536FE2228E17AF300563811 /* ViewSeferagic.swift */; };
 		6536FE2528E181A100563811 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536FE2428E181A100563811 /* Data.swift */; };
+		6573283A28E387CD0029B2A5 /* Fatihah.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6573283928E387CD0029B2A5 /* Fatihah.mp3 */; };
+		6573283C28E387DD0029B2A5 /* Al-Anbiya.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6573283B28E387DD0029B2A5 /* Al-Anbiya.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		6536FE2028E17AE000563811 /* ViewMishari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMishari.swift; sourceTree = "<group>"; };
 		6536FE2228E17AF300563811 /* ViewSeferagic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSeferagic.swift; sourceTree = "<group>"; };
 		6536FE2428E181A100563811 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		6573283928E387CD0029B2A5 /* Fatihah.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fatihah.mp3; path = ../../../../../Downloads/Fatihah.mp3; sourceTree = "<group>"; };
+		6573283B28E387DD0029B2A5 /* Al-Anbiya.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Al-Anbiya.mp3"; path = "../../../../../Downloads/Al-Anbiya.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 		65025C9728DBAF6F000B352C /* UIKitDZ */ = {
 			isa = PBXGroup;
 			children = (
+				6573283928E387CD0029B2A5 /* Fatihah.mp3 */,
+				6573283B28E387DD0029B2A5 /* Al-Anbiya.mp3 */,
 				65025C9828DBAF6F000B352C /* AppDelegate.swift */,
 				65025C9A28DBAF6F000B352C /* SceneDelegate.swift */,
 				6536FE2028E17AE000563811 /* ViewMishari.swift */,
@@ -137,6 +143,8 @@
 			files = (
 				65025CA528DBAF71000B352C /* LaunchScreen.storyboard in Resources */,
 				65025CA228DBAF71000B352C /* Assets.xcassets in Resources */,
+				6573283C28E387DD0029B2A5 /* Al-Anbiya.mp3 in Resources */,
+				6573283A28E387CD0029B2A5 /* Fatihah.mp3 in Resources */,
 				65025CA028DBAF6F000B352C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
