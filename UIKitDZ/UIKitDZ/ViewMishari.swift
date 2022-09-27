@@ -25,18 +25,18 @@ class ViewMishari: UIViewController {
                 let urlString = Bundle.main.path(forResource: "Fatihah", ofType: "mp3")
             do {
                 try AVAudioSession.sharedInstance().setMode(.default)
-                try AVAudioSession.sharedInstance().setActive(true,     options: .notifyOthersOnDeactivation)
+                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
                 guard let urlString = urlString else {
                     return
                 }
-                player = try AVAudioPlayer(contentsOf:              URL(fileURLWithPath: urlString))
+                player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
                 guard let player = player else {
                     return
                 }
                 player.play()
             }
             catch {
-                print("something went wrong")
+                print("something went wrong!")
             }
         }
     }
