@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DataPickerViews: UIView {
+final class DataPickerViews: UIView {
 
     let nameLabel: UILabel = {
             let label = UILabel()

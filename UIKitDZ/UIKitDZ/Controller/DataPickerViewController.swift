@@ -7,16 +7,15 @@
 
 import UIKit
 
-class DataPickerViewController: UIViewController {
+/// In this class we manage all data related to the Datapickers actions
+final class DataPickerViewController: UIViewController {
 
     let dataPickerviews = DataPickerViews()
     let dataPickerData = DataPickerData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         setupView()
-        addInfo()
     }
 
     func setupView() {
@@ -42,9 +41,11 @@ class DataPickerViewController: UIViewController {
         dataPickerData.agePicker.tag = 1
         dataPickerData.genderPicker.tag = 2
         createDatePicker()
+        addNavigationItem()
+        view.backgroundColor = .white
     }
 
-    func addInfo() {
+    func addNavigationItem() {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Добавить",
                                                                 style: .plain,
                                                                 target: self,
@@ -54,7 +55,7 @@ class DataPickerViewController: UIViewController {
 
     @objc private func pushBirthdayListAction() {
             let addPerson = BirthDayViewController()
-            self.navigationController?.pushViewController(addPerson, animated: true)
+            navigationController?.pushViewController(addPerson, animated: true)
         }
 
     func createDatePicker() {

@@ -7,17 +7,22 @@
 
 import UIKit
 
-class BirthDayViewController: UIViewController {
+/// In this class we manage the data related to the date of birth
+final class BirthDayViewController: UIViewController {
 
     let persons = BIrthdayViews()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        title = "Birthday"
-        addPerson()
-        addSetup()
+        configureViews()
     }
 
+    func configureViews() {
+        view.backgroundColor = .white
+        title = "Birthday"
+        addNavigationItem()
+        addSetup()
+    }
+    
     func addSetup() {
         view.addSubview(persons.jeremyLabel)
         view.addSubview(persons.jeremyButton)
@@ -33,7 +38,7 @@ class BirthDayViewController: UIViewController {
         view.addSubview(persons.jonyButton)
     }
 
-    func addPerson() {
+    func addNavigationItem() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                                        target: self,
                                                                        action: #selector(pushPickersView))

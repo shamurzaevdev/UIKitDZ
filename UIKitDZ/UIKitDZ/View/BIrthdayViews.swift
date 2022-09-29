@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BIrthdayViews: UIView {
+final class BIrthdayViews: UIView {
 
     let jeremyLabel: UILabel = {
             let label = UILabel()

@@ -9,7 +9,7 @@ import UIKit
 
 /// This is a class where we initialize our UI elements
 
-class GlobalUiElements: UIView {
+final class GlobalUiElements: UIView {
 
 // Create login label
 
@@ -33,7 +33,7 @@ class GlobalUiElements: UIView {
 
 // Create textField for Login
 
-    let textFielddLogin: UITextField = {
+    let loginTextField: UITextField = {
        let textField = UITextField()
         textField.frame = CGRect(x: 50, y: 230, width: 150, height: 30)
         textField.placeholder = "Enter your login"
@@ -49,7 +49,7 @@ class GlobalUiElements: UIView {
 
 // Create textField for Password
 
-    let textFielddPassword: UITextField = {
+    let passwordTextField: UITextField = {
        let textField = UITextField()
         textField.frame = CGRect(x: 50, y: 300, width: 150, height: 30)
         textField.placeholder = "Enter your password"
@@ -77,7 +77,7 @@ class GlobalUiElements: UIView {
         return button
     }()
 
-    let birthDayReminder: UILabel = {
+    let birthDayReminderLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 100, y: 70, width: 200, height: 50)
         label.textColor = .blue
@@ -98,7 +98,7 @@ class GlobalUiElements: UIView {
         return label
     }()
 
-    let faceIdLogin: UILabel = {
+    let faceIdLoginLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 70, y: 350, width: 200, height: 50)
         label.textColor = .black
@@ -108,7 +108,7 @@ class GlobalUiElements: UIView {
         return label
     }()
 
-    let faceIdIsOn: UISwitch = {
+    let faceIdISwitch: UISwitch = {
         let switcher = UISwitch()
         switcher.frame = CGRect(x: 250, y: 360, width: 0, height: 0)
         switcher.isOn = true

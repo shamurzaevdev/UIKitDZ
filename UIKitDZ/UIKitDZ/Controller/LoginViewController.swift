@@ -9,7 +9,9 @@ import UIKit
 
 let elements = GlobalUiElements()
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+
+/// This is a class via we manage the data related to login information
+final class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -20,14 +22,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func setUpViews() {
         view.addSubview(elements.loginLabel)
         view.addSubview(elements.passwordLabel)
-        view.addSubview(elements.textFielddLogin)
-        view.addSubview(elements.textFielddPassword)
+        view.addSubview(elements.loginTextField)
+        view.addSubview(elements.passwordTextField)
         view.addSubview(elements.loginButton)
-        view.addSubview(elements.birthDayReminder)
+        view.addSubview(elements.birthDayReminderLabel)
         view.addSubview(elements.signInLabel)
-        view.addSubview(elements.faceIdLogin)
-        view.addSubview(elements.faceIdIsOn)
-        elements.textFielddLogin.delegate = self
+        view.addSubview(elements.faceIdLoginLabel)
+        view.addSubview(elements.faceIdISwitch)
+        elements.loginTextField.delegate = self
         navigationController?.navigationBar.barTintColor = .lightGray
     }
     @objc func loginAction(sender: UIButton) {
