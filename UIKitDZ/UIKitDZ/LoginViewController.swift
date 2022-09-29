@@ -7,7 +7,8 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+/// This is a class via we can log in to our application
+final class LoginViewController: UIViewController {
     
     let loginLabel: UILabel = {
             let label = UILabel()
@@ -27,7 +28,7 @@ class LoginViewController: UIViewController {
         }()
 
     // Create textField for Login
-        let textFielddLogin: UITextField = {
+        let loginTextField: UITextField = {
            let textField = UITextField()
             textField.frame = CGRect(x: 50, y: 230, width: 150, height: 30)
             textField.placeholder = "Enter your login"
@@ -42,7 +43,7 @@ class LoginViewController: UIViewController {
         }()
 
     // Create textField for Password
-        let textFielddPassword: UITextField = {
+        let passwordTextField: UITextField = {
            let textField = UITextField()
             textField.frame = CGRect(x: 50, y: 300, width: 150, height: 30)
             textField.placeholder = "Enter your password"
@@ -69,7 +70,7 @@ class LoginViewController: UIViewController {
             return button
         }()
 
-        lazy var imageView: UIImageView = {
+        lazy var logoImageView: UIImageView = {
             let imageView = UIImageView()
             imageView.frame = CGRect(x: 0, y: 90, width: 150, height: 100)
             imageView.center.x = view.center.x
@@ -77,7 +78,7 @@ class LoginViewController: UIViewController {
             return imageView
         }()
 
-        let faceIdLogin: UILabel = {
+        let faceIdLoginLabel: UILabel = {
             let label = UILabel()
             label.frame = CGRect(x: 70, y: 350, width: 200, height: 50)
             label.textColor = .black
@@ -87,7 +88,7 @@ class LoginViewController: UIViewController {
             return label
         }()
 
-        let faceIdIsOn: UISwitch = {
+        let faceIdIsOnSwitch: UISwitch = {
             let switcher = UISwitch()
             switcher.frame = CGRect(x: 250, y: 360, width: 0, height: 0)
             switcher.isOn = true
@@ -104,12 +105,12 @@ class LoginViewController: UIViewController {
     private func setupUI() {
         view.addSubview(loginLabel)
         view.addSubview(passwordLabel)
-        view.addSubview(textFielddLogin)
-        view.addSubview(textFielddPassword)
+        view.addSubview(loginTextField)
+        view.addSubview(passwordTextField)
         view.addSubview(loginButton)
-        view.addSubview(imageView)
-        view.addSubview(faceIdLogin)
-        view.addSubview(faceIdIsOn)
+        view.addSubview(logoImageView)
+        view.addSubview(faceIdLoginLabel)
+        view.addSubview(faceIdIsOnSwitch)
         view.backgroundColor = .white
         loginButton.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
     }

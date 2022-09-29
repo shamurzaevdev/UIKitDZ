@@ -7,8 +7,8 @@
 
 import UIKit
 
-/// Check View Controller: There are an information about the order
-class CheckViewController: UIViewController {
+/// There are an information about the order
+final class CheckViewController: UIViewController {
     
     lazy var checkInfoLabel: UILabel = {
             let label = UILabel()
@@ -34,6 +34,10 @@ class CheckViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+    
+    func setupUI() {
         title = "Check"
         view.backgroundColor = .white
         view.addSubview(checkInfoLabel)

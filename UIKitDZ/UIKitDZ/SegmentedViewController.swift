@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// In this class we can chose the necessary element of items in our shop
 class SegmentedViewController: UIViewController {
 
     var segmentedControll = UISegmentedControl()
@@ -17,7 +18,7 @@ class SegmentedViewController: UIViewController {
         imageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
         imageView.center.y = view.center.y - 150
         imageView.center.x = view.center.x
-        imageView.image = imageArray[0]
+        imageView.image = images[0]
         return imageView
     }()
     
@@ -32,7 +33,7 @@ class SegmentedViewController: UIViewController {
         return button
     }()
     
-    var imageArray = [UIImage(named: "lvOne"),
+    var images = [UIImage(named: "lvOne"),
                       UIImage(named: "lvTwo"),
                       UIImage(named: "lvThree")]
 
@@ -58,7 +59,7 @@ class SegmentedViewController: UIViewController {
     @objc private func selectVlaueAction(target: UISegmentedControl) {
         if target == segmentedControll {
             let segmentIndex = target.selectedSegmentIndex
-            imageView.image = imageArray[segmentIndex]
+            imageView.image = images[segmentIndex]
         }
     }
     
