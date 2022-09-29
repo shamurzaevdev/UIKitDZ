@@ -7,15 +7,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+/// In this class we giving an access to share with info in others applications
+final class ViewController: UIViewController, UITextFieldDelegate {
 
-    var buttonShare = UIButton()
+    @IBOutlet weak var pickerView: UIPickerView!
+    
+    var shareButton = UIButton()
     var textField = UITextField()
     var activityViewController: UIActivityViewController?
     var news: String = ""
-    var url : String = ""
-
-    @IBOutlet weak var pickerView: UIPickerView!
+    var url: String = ""
 
     var pickerElements = ["Raz", "Dva", "tut nado share sdelat"]
 
@@ -43,11 +44,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     func createButton() {
-        buttonShare = UIButton(type: .roundedRect)
-        buttonShare.frame = CGRect(x: 50, y: 350, width: 280, height: 44)
-        buttonShare.setTitle("Share", for: .normal)
-        buttonShare.addTarget(self, action: #selector(handleShare), for: .touchUpInside)
-        view.addSubview(buttonShare)
+        shareButton = UIButton(type: .roundedRect)
+        shareButton.frame = CGRect(x: 50, y: 350, width: 280, height: 44)
+        shareButton.setTitle("Share", for: .normal)
+        shareButton.addTarget(self, action: #selector(handleShare), for: .touchUpInside)
+        view.addSubview(shareButton)
     }
 
     @objc private func handleShare(sender: UIButton) {
