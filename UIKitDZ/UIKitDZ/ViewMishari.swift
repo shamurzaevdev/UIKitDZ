@@ -8,6 +8,8 @@
 import UIKit
 import AVFoundation
 
+/// View Mishari: This is a View Controller created special for artist Mishari Rashid for his recitation
+
 class ViewMishari: UIViewController {
 
     var player: AVAudioPlayer?

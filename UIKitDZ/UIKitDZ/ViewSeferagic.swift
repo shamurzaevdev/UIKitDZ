@@ -8,6 +8,8 @@
 import UIKit
 import AVFoundation
 
+/// View Seferagic: This is a View Controller created special for artist Fatih Seferagic for his recitation
+
 class ViewSeferagic: UIViewController {
 
     var player: AVAudioPlayer?
