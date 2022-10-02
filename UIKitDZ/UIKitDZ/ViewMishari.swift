@@ -8,8 +8,12 @@
 import UIKit
 import AVFoundation
 
-class ViewMishari: UIViewController {
+/// This is a View Controller created special for artist Mishari Rashid for his recitation
 
+final class ViewMishari: UIViewController {
+
+    // MARK: - Init the AVAudioPlayer
+    
     var player: AVAudioPlayer?
 
     @IBOutlet weak var playButton: UIButton!
@@ -18,6 +22,7 @@ class ViewMishari: UIViewController {
             super.viewDidLoad()
     }
 
+    // MARK: - The player's body
     @IBAction func didTapButton() {
             if let player = player, player.isPlaying {
                 player.pause()
