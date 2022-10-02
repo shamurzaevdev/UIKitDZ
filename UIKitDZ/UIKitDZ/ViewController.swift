@@ -6,10 +6,10 @@
 //
 
 import UIKit
+/// Начальний VC
+class ViewController: UIViewController {
 
-class MainMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }
