@@ -6,8 +6,8 @@
 //
 
 import UIKit
-
-class MainMenuViewController: UIViewController {
+/// This is a main view controller from which we are starting our player. You can see a lot of actions in Main Storyboard.
+final class MainMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         

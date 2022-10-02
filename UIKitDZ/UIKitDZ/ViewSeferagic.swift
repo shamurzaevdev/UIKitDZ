@@ -8,8 +8,12 @@
 import UIKit
 import AVFoundation
 
-class ViewSeferagic: UIViewController {
+/// This is a View Controller created special for artist Fatih Seferagic for his recitation
+                                                
+final class ViewSeferagic: UIViewController {
 
+    // MARK: - Init the AVAudioPlayer
+    
     var player: AVAudioPlayer?
 
     @IBOutlet weak var playButton: UIButton!
@@ -17,6 +21,9 @@ class ViewSeferagic: UIViewController {
     override func viewDidLoad() {
             super.viewDidLoad()
     }
+    
+    // MARK: - The player's body
+    
     @IBAction func didTapButton() {
         if let player = player, player.isPlaying {
             player.pause()
