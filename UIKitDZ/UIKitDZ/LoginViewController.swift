@@ -9,8 +9,9 @@ import UIKit
 
 /// This is a class via we can log in to our application
 final class LoginViewController: UIViewController {
-    
-    let loginLabel: UILabel = {
+
+    // MARK: - Private properties
+    private let loginLabel: UILabel = {
             let label = UILabel()
             label.frame = CGRect(x: 50, y: 200, width: 70, height: 30)
             label.textColor = .black
@@ -18,8 +19,7 @@ final class LoginViewController: UIViewController {
             return label
         }()
 
-    // Create password label
-        let passwordLabel: UILabel = {
+    private let passwordLabel: UILabel = {
             let label = UILabel()
             label.frame = CGRect(x: 50, y: 270, width: 100, height: 30)
             label.textColor = .black
@@ -27,8 +27,7 @@ final class LoginViewController: UIViewController {
             return label
         }()
 
-    // Create textField for Login
-        let loginTextField: UITextField = {
+    private let loginTextField: UITextField = {
            let textField = UITextField()
             textField.frame = CGRect(x: 50, y: 230, width: 150, height: 30)
             textField.placeholder = "Enter your login"
@@ -42,8 +41,7 @@ final class LoginViewController: UIViewController {
             return textField
         }()
 
-    // Create textField for Password
-        let passwordTextField: UITextField = {
+    private let passwordTextField: UITextField = {
            let textField = UITextField()
             textField.frame = CGRect(x: 50, y: 300, width: 150, height: 30)
             textField.placeholder = "Enter your password"
@@ -58,8 +56,7 @@ final class LoginViewController: UIViewController {
             return textField
         }()
 
-    // Create login Button
-        let loginButton: UIButton = {
+    private let loginButton: UIButton = {
             let button = UIButton()
             button.frame = CGRect(x: 100, y: 400, width: 200, height: 50)
             button.setTitle("Login", for: .normal)
@@ -70,7 +67,7 @@ final class LoginViewController: UIViewController {
             return button
         }()
 
-        lazy var logoImageView: UIImageView = {
+    private lazy var logoImageView: UIImageView = {
             let imageView = UIImageView()
             imageView.frame = CGRect(x: 0, y: 90, width: 150, height: 100)
             imageView.center.x = view.center.x
@@ -78,7 +75,7 @@ final class LoginViewController: UIViewController {
             return imageView
         }()
 
-        let faceIdLoginLabel: UILabel = {
+    private let faceIdLoginLabel: UILabel = {
             let label = UILabel()
             label.frame = CGRect(x: 70, y: 350, width: 200, height: 50)
             label.textColor = .black
@@ -88,20 +85,19 @@ final class LoginViewController: UIViewController {
             return label
         }()
 
-        let faceIdIsOnSwitch: UISwitch = {
+    private let faceIdIsOnSwitch: UISwitch = {
             let switcher = UISwitch()
             switcher.frame = CGRect(x: 250, y: 360, width: 0, height: 0)
             switcher.isOn = true
             return switcher
         }()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-    
     }
-    
+
+    // MARK: - Private methods
     private func setupUI() {
         view.addSubview(loginLabel)
         view.addSubview(passwordLabel)
@@ -114,20 +110,20 @@ final class LoginViewController: UIViewController {
         view.backgroundColor = .white
         loginButton.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
     }
-    
+
     @objc func loginAction(sender: UIButton) {
             // We have to push a Birthday View Controller
             let segmentedController = SegmentedViewController()
             segmentedController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< Back",
                                                                           style: .plain,
                                                                           target: self,
-                                                                          action: #selector(dismissSelf))
+                                                                          action: #selector(closeAction))
             let navVC = UINavigationController(rootViewController: segmentedController)
             navVC.modalPresentationStyle = .fullScreen
             present(navVC, animated: true)
         }
 
-        @objc private func dismissSelf() {
+        @objc private func closeAction() {
             dismiss(animated: true, completion: nil)
         }
 }

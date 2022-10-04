@@ -9,8 +9,9 @@ import UIKit
 
 /// There are an information about the order
 final class CheckViewController: UIViewController {
-    
-    lazy var checkInfoLabel: UILabel = {
+
+    // MARK: - Private properties
+    private lazy var checkInfoLabel: UILabel = {
             let label = UILabel()
             label.frame = CGRect(x: 0, y: 50, width: 300, height: 200)
             label.textColor = .black
@@ -20,8 +21,8 @@ final class CheckViewController: UIViewController {
             label.text = "LV Sneakers Trainer"
             return label
         }()
-    
-    lazy var priceInfoLabel: UILabel = {
+
+    private lazy var priceInfoLabel: UILabel = {
             let label = UILabel()
             label.frame = CGRect(x: 0, y: 80, width: 300, height: 200)
             label.textColor = .black
@@ -36,8 +37,9 @@ final class CheckViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
-    
-    func setupUI() {
+
+    // MARK: - Private methods
+    private func setupUI() {
         title = "Check"
         view.backgroundColor = .white
         view.addSubview(checkInfoLabel)

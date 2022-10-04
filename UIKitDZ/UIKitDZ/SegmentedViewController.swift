@@ -8,12 +8,13 @@
 import UIKit
 
 /// In this class we can chose the necessary element of items in our shop
-class SegmentedViewController: UIViewController {
+final class SegmentedViewController: UIViewController {
 
-    var segmentedControll = UISegmentedControl()
-    var menuArray = ["one", "two", "three"]
-    
-    lazy var imageView: UIImageView = {
+    // MARK: - Private properties
+    private var segmentedControll = UISegmentedControl()
+    private var menuArray = ["one", "two", "three"]
+
+    private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
         imageView.center.y = view.center.y - 150
@@ -21,8 +22,8 @@ class SegmentedViewController: UIViewController {
         imageView.image = images[0]
         return imageView
     }()
-    
-    let buyButton: UIButton = {
+
+    private let buyButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 100, y: 700, width: 200, height: 50)
         button.setTitle("Buy", for: .normal)
@@ -32,20 +33,20 @@ class SegmentedViewController: UIViewController {
         button.setTitleColor(.black, for: .highlighted)
         return button
     }()
-    
-    var images = [UIImage(named: "lvOne"),
+
+    private var images = [UIImage(named: "lvOne"),
                       UIImage(named: "lvTwo"),
                       UIImage(named: "lvThree")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        // create segmented and setup the app
+
         setupUI()
     }
 
-    func setupUI() {
-    
+    // MARK: - Private methods
+    private func setupUI() {
+
         segmentedControll = UISegmentedControl(items: menuArray)
         segmentedControll.frame = CGRect(x: 100, y: 450, width: 200, height: 30)
         view.addSubview(segmentedControll)
@@ -62,9 +63,9 @@ class SegmentedViewController: UIViewController {
             imageView.image = images[segmentIndex]
         }
     }
-    
+
     @objc private func buyAction(sender: UIButton) {
-        
+
         let checkViewController = CheckViewController()
         let actionController = UIAlertController(
                             title: "Do you want to buy it?",
