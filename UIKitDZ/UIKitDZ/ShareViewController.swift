@@ -8,17 +8,19 @@
 import UIKit
 
 /// In this class we giving an access to share with info in others applications
-final class ViewController: UIViewController, UITextFieldDelegate {
+final class ViewController: UIViewController {
 
+    // MARK: - IBOutlet
     @IBOutlet weak var pickerView: UIPickerView!
-    
-    var shareButton = UIButton()
-    var textField = UITextField()
-    var activityViewController: UIActivityViewController?
-    var news: String = ""
-    var url: String = ""
 
-    var pickerElements = ["Raz", "Dva", "tut nado share sdelat"]
+    // MARK: - Private properties
+    private var shareButton = UIButton()
+    private var textField = UITextField()
+    private var activityViewController: UIActivityViewController?
+    private var news: String = ""
+    private var url: String = ""
+
+    private var pickerElements = ["Raz", "Dva", "tut nado share sdelat"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +29,13 @@ final class ViewController: UIViewController, UITextFieldDelegate {
         setupDelegates()
     }
 
-    // MARK: - Method
-    
-    func setupDelegates() {
+    // MARK: - Private Methods
+    private func setupDelegates() {
         pickerView.delegate = self
         pickerView.dataSource = self
     }
 
-    func createTextField() {
+    private func createTextField() {
         textField.frame = CGRect(x: 0, y: 0, width: 200, height: 30)
         textField.center = view.center
         textField.borderStyle = .roundedRect
@@ -43,7 +44,7 @@ final class ViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(textField)
     }
 
-    func createButton() {
+    private func createButton() {
         shareButton = UIButton(type: .roundedRect)
         shareButton.frame = CGRect(x: 50, y: 350, width: 280, height: 44)
         shareButton.setTitle("Share", for: .normal)
@@ -66,14 +67,7 @@ final class ViewController: UIViewController, UITextFieldDelegate {
         present(activityViewController!, animated: true, completion: nil)
     }
 
-    // MARK: - UITextFieldDelegate
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-
-    func shareItFunc() -> [Any] {
+    private func shareItFunc() -> [Any] {
             var sharingData: [Any] = [Any]()
 
             if let text = textField.text {
@@ -83,17 +77,21 @@ final class ViewController: UIViewController, UITextFieldDelegate {
             return sharingData
         }
 
-    func shareData() {
+    private func shareData() {
         let url = URL(string: "google.com")
         let shareText = "Your string goes here"
         let shareItems: [Any] = [shareText, url!]
 
         let activityVC = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
-        activityVC.excludedActivityTypes = [.airDrop, .postToFlickr, .assignToContact, .openInIBooks, .postToFacebook, .postToTwitter]
+        activityVC.excludedActivityTypes = [.airDrop, .postToFlickr,
+                                            .assignToContact, .openInIBooks,
+                                            .postToFacebook, .postToTwitter]
 
         self.present(activityVC, animated: true, completion: nil)
         }
 }
+
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -107,10 +105,19 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
             return pickerElements[row]
         }
-    
-        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
             if row == 2 {
                 shareData()
             }
         }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension ViewController: UITextFieldDelegate {
+     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
