@@ -16,5 +16,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         _ scene: UIScene,
         willConnectTo session: UISceneSession,
         options connectionOptions: UIScene.ConnectionOptions) {
+            guard let windowScene = scene as? UIWindowScene else { return }
+            
+            window = UIWindow(windowScene: windowScene)
+            let iReaderViewController = IReaderViewController()
+            let navController = UINavigationController(rootViewController: iReaderViewController)
+            window?.rootViewController = navController
+            window?.backgroundColor = .gray
+            window?.makeKeyAndVisible()
+
     }
 }
