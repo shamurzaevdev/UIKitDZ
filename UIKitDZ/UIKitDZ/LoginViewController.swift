@@ -8,7 +8,22 @@
 import UIKit
 /// This class is for login settings
 final class LoginViewController: UIViewController {
-    
+
+    // MARK: - Constants
+
+    private enum Constants {
+        static let emptyText = ""
+        static let okText = "OK"
+        static let segueId = "login"
+        static let unsuccessfulEnterTitle = "Неудачный вход"
+        static let unsuccessfulEnterMessage = "Учетная запись не найдена"
+        static let registrationTitle = "Учетная запись зарегистрирована"
+        static let successEnterTitle = "Успешный вход"
+        static let successEnterMessage = "Учетная запись найдена"
+        static let UpUIWhenkeyboardWillShow = -200.0
+        static let DownUIWhenkeyboardWillShow = 0.0
+    }
+
     // MARK: - IBOutlet
 
     @IBOutlet private weak var loginTextField: UITextField!
@@ -16,15 +31,15 @@ final class LoginViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var signinButton: UIButton!
     @IBOutlet private weak var loginButton: UIButton!
-    
+
     // MARK: - Private properties
-    
-    private var usersArray: [UserData] = []
-    private var listUsersArray: [[String]] = []
+
+    private var users: [UserData] = []
+    private var listUsers: [[String]] = []
     private let defaults = UserDefaults.standard
-    
+
     // MARK: - Lifecycles
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegate()
@@ -39,21 +54,21 @@ final class LoginViewController: UIViewController {
                 else {
                     return
                 }
-                usersArray.append(
+                users.append(
                     UserData(
                         nicknameUser: safeNicknameText,
                         emailUser: safeEmailText,
                         passwordUser: safePasswordText
                     )
                 )
-                listUsersArray.append([safeNicknameText, safeEmailText, safePasswordText])
-                self.defaults.set(self.listUsersArray, forKey: "ListUsers")
+                listUsers.append([safeNicknameText, safeEmailText, safePasswordText])
+                self.defaults.set(self.listUsers, forKey: "ListUsers")
                 registrationAlert()
                 loginTextField.text = Constants.emptyText
                 emailTextField.text = Constants.emptyText
                 passwordTextField.text = Constants.emptyText
     }
-    
+
     @IBAction func loginAction(_ sender: UIButton) {
         var userExisting = false
             guard
@@ -64,7 +79,7 @@ final class LoginViewController: UIViewController {
             else {
                 return
             }
-            for userData in listUsersArray {
+            for userData in listUsers {
                 guard
                     userData.count == 3,
                     safeNicknameUser == userData[0],
@@ -84,9 +99,8 @@ final class LoginViewController: UIViewController {
             successAlert()
     }
 
-
 // MARK: - Private Methods
-    
+
     private func unsuccessfulAlert() {
         let alertController = UIAlertController(
             title: Constants.unsuccessfulEnterTitle,
@@ -97,7 +111,7 @@ final class LoginViewController: UIViewController {
         alertController.addAction(alertAction)
         present(alertController, animated: true)
     }
-    
+
     private func registrationAlert() {
         let alertController = UIAlertController(
             title: Constants.registrationTitle,
@@ -108,7 +122,7 @@ final class LoginViewController: UIViewController {
         alertController.addAction(alertAction)
         present(alertController, animated: true)
     }
-    
+
     private func successAlert() {
         let alertController = UIAlertController(
             title: Constants.successEnterTitle,
@@ -121,19 +135,19 @@ final class LoginViewController: UIViewController {
         alertController.addAction(alertAction)
         present(alertController, animated: true)
     }
-    
+
     private func setDelegate() {
         loginTextField.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
-    
+
     private func setUserDefaults() {
         if let items = defaults.array(forKey: "ListUsers") as? [[String]] {
-            listUsersArray = items
+            listUsers = items
         }
     }
-    
+
     private func setNotificationCenter() {
         NotificationCenter.default.addObserver(
             forName: UIResponder.keyboardWillShowNotification,
@@ -142,7 +156,6 @@ final class LoginViewController: UIViewController {
         ) { _ in
             self.view.frame.origin.y = Constants.UpUIWhenkeyboardWillShow
         }
-        
         NotificationCenter.default.addObserver(
             forName: UIResponder.keyboardWillHideNotification,
             object: nil,
@@ -151,25 +164,10 @@ final class LoginViewController: UIViewController {
             self.view.frame.origin.y = Constants.DownUIWhenkeyboardWillShow
         }
     }
-    
-    // MARK: - Constants
-    
-    private enum Constants {
-        static let emptyText = ""
-        static let okText = "OK"
-        static let segueId = "login"
-        static let unsuccessfulEnterTitle = "Неудачный вход"
-        static let unsuccessfulEnterMessage = "Учетная запись не найдена"
-        static let registrationTitle = "Учетная запись зарегистрирована"
-        static let successEnterTitle = "Успешный вход"
-        static let successEnterMessage = "Учетная запись найдена"
-        static let UpUIWhenkeyboardWillShow = -200.0
-        static let DownUIWhenkeyboardWillShow = 0.0
-    }
 }
 
 extension LoginViewController: UITextFieldDelegate {
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case loginTextField:
@@ -181,7 +179,7 @@ extension LoginViewController: UITextFieldDelegate {
         }
         return true
     }
-    
+
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
             switch textField {
             case loginTextField:

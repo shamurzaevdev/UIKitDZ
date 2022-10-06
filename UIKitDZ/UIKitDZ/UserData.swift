@@ -7,10 +7,10 @@
 
 import Foundation
 
+/// In this struct we keep our data of application
+
 struct UserData {
-    
-    // MARK: - Public Properties
-    
+
     var nicknameUser = ""
     var emailUser = ""
     var passwordUser = ""

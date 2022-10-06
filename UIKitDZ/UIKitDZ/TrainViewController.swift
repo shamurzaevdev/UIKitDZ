@@ -66,23 +66,5 @@ final class TrainViewController: UIViewController {
         }
 
         @objc private func buyAction(sender: UIButton) {
-
-//            let checkViewController = CheckViewController()
-//            let actionController = UIAlertController(
-//                                title: "Do you want to buy it?",
-//                                message: "SNEAKER LV TRAINER",
-//                                preferredStyle: .alert
-//                            )
-//                            let cancelAction = UIAlertAction(title: "No", style: .default)
-//                            let billAction = UIAlertAction(title: "Yes", style: .default) { _ in
-//                            let navVC = UINavigationController(rootViewController: checkViewController)
-//                            navVC.modalPresentationStyle = .fullScreen
-//                            self.present(navVC, animated: true)
-//                            }
-//                            actionController.addAction(cancelAction)
-//                            actionController.addAction(billAction)
-//                            self.present(actionController, animated: true, completion: nil)
-//                            self.view.endEditing(true)
-//                }
         }
 }
