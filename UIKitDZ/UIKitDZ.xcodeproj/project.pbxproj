@@ -14,7 +14,7 @@
 		65025CA228DBAF71000B352C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65025CA128DBAF71000B352C /* Assets.xcassets */; };
 		65025CA528DBAF71000B352C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65025CA328DBAF71000B352C /* LaunchScreen.storyboard */; };
 		65DCD02028ED449B00EC581D /* AllData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DCD01F28ED449B00EC581D /* AllData.swift */; };
-		65DCD02228ED4D1400EC581D /* Extension+IReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DCD02128ED4D1400EC581D /* Extension+IReaderViewController.swift */; };
+		65DCD02228ED4D1400EC581D /* IReaderViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DCD02128ED4D1400EC581D /* IReaderViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		65025CA428DBAF71000B352C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65025CA628DBAF71000B352C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65DCD01F28ED449B00EC581D /* AllData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllData.swift; sourceTree = "<group>"; };
-		65DCD02128ED4D1400EC581D /* Extension+IReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+IReaderViewController.swift"; sourceTree = "<group>"; };
+		65DCD02128ED4D1400EC581D /* IReaderViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IReaderViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 				65025C9A28DBAF6F000B352C /* SceneDelegate.swift */,
 				65DCD01F28ED449B00EC581D /* AllData.swift */,
 				65025C9C28DBAF6F000B352C /* IReaderViewController.swift */,
-				65DCD02128ED4D1400EC581D /* Extension+IReaderViewController.swift */,
+				65DCD02128ED4D1400EC581D /* IReaderViewController+Extension.swift */,
 				65025C9E28DBAF6F000B352C /* Main.storyboard */,
 				65025CA128DBAF71000B352C /* Assets.xcassets */,
 				65025CA328DBAF71000B352C /* LaunchScreen.storyboard */,
@@ -167,7 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65025C9D28DBAF6F000B352C /* IReaderViewController.swift in Sources */,
-				65DCD02228ED4D1400EC581D /* Extension+IReaderViewController.swift in Sources */,
+				65DCD02228ED4D1400EC581D /* IReaderViewController+Extension.swift in Sources */,
 				65DCD02028ED449B00EC581D /* AllData.swift in Sources */,
 				65025C9928DBAF6F000B352C /* AppDelegate.swift in Sources */,
 				65025C9B28DBAF6F000B352C /* SceneDelegate.swift in Sources */,

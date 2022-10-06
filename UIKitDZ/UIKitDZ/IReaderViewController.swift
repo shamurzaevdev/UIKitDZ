@@ -7,7 +7,7 @@
 
 import UIKit
 /// There are our iReader body
-///
+
 final class IReaderViewController: UIViewController {
 
     // MARK: - Constants
@@ -48,7 +48,7 @@ which connects the Mediterranean Sea to the Atlantic Ocean through theÂ GaronneÂ
         static let increaseThicknessFont = "A"
         static let reduceThicknessFont = "a"
         static let nameTextFont = ["Optima", "Helvetica", "American Typewriter", "Times New Roman"]
-        static let textFont = [UIFont(name: "Helvetica", size: 17),
+        static let textFonts = [UIFont(name: "Helvetica", size: 17),
                                UIFont(name: "Times New Roman", size: 17),
                                UIFont(name: "Optima", size: 17),
                                UIFont(name: "American Typewriter", size: 17)]
@@ -174,7 +174,7 @@ extension IReaderViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Constants.textFont.count
+        return Constants.textFonts.count
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -182,6 +182,6 @@ extension IReaderViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        allData.iReaderText.font = Constants.textFont[row]
+        allData.iReaderText.font = Constants.textFonts[row]
     }
 }

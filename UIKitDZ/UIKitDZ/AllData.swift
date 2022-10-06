@@ -9,8 +9,8 @@ import UIKit
 
 /// All data is here
 
-class AllDataClass {
-    
+final class AllDataClass {
+
     let iReaderText = UITextView()
     let sizeTextSlider = UISlider()
     let sizeLabel = UILabel()
